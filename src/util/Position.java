@@ -34,4 +34,9 @@ public class Position {
         result = 31 * result + (int) (latitude ^ (latitude >>> 32));
         return result;
     }
+
+    @Override
+    public String toString() {
+        return latitude + "," + longitude;
+    }
 }
