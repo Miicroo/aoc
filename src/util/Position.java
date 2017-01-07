@@ -1,19 +1,19 @@
 package util;
 
 public class Position {
-    private long longitude, latitude;
+    private long y, x;
 
-    public Position(long longitude, long latitude) {
-        this.longitude = longitude;
-        this.latitude = latitude;
+    public Position(long y, long x) {
+        this.y = y;
+        this.x = x;
     }
 
-    public long getLongitude() {
-        return longitude;
+    public long getY() {
+        return y;
     }
 
-    public long getLatitude() {
-        return latitude;
+    public long getX() {
+        return x;
     }
 
     @Override
@@ -23,20 +23,20 @@ public class Position {
 
         Position position = (Position) o;
 
-        if (longitude != position.longitude) return false;
-        return latitude == position.latitude;
+        if (y != position.y) return false;
+        return x == position.x;
 
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (longitude ^ (longitude >>> 32));
-        result = 31 * result + (int) (latitude ^ (latitude >>> 32));
+        int result = (int) (y ^ (y >>> 32));
+        result = 31 * result + (int) (x ^ (x >>> 32));
         return result;
     }
 
     @Override
     public String toString() {
-        return latitude + "," + longitude;
+        return x + "," + y;
     }
 }

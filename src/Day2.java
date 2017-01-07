@@ -33,15 +33,15 @@ public class Day2 {
                 char move = moves.charAt(i);
                 position = move(position, move, pad);
             }
-            code += pad[(int)position.getLongitude()][(int)position.getLatitude()];
+            code += pad[(int)position.getY()][(int)position.getX()];
         }
 
         return code;
     }
 
     private static Position move(Position old, char move, String[][] pad) {
-        int nextX = (int)old.getLatitude();
-        int nextY = (int)old.getLongitude();
+        int nextX = (int)old.getX();
+        int nextY = (int)old.getY();
 
         switch(move) {
             case 'U':

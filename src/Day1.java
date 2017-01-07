@@ -116,26 +116,26 @@ public class Day1 {
                     break;
                 }
 
-                //System.out.println("You are at ("+ currentPosition.getLongitude()+","+currentPosition.getLatitude() +")");
+                //System.out.println("You are at ("+ currentPosition.getY()+","+currentPosition.getX() +")");
             }
 
             if(hqPosition != null) {
                 break;
             }
         }
-        return Math.abs((int)hqPosition.getLongitude()) + Math.abs((int)hqPosition.getLatitude());
+        return Math.abs((int)hqPosition.getY()) + Math.abs((int)hqPosition.getX());
     }
 
     private static Position move(Position current, Direction direction) {
         switch(direction) {
             case NORTH:
-                return new Position(current.getLongitude() + 1, current.getLatitude());
+                return new Position(current.getY() + 1, current.getX());
             case SOUTH:
-                return new Position(current.getLongitude() - 1, current.getLatitude());
+                return new Position(current.getY() - 1, current.getX());
             case EAST:
-                return new Position(current.getLongitude(), current.getLatitude() + 1);
+                return new Position(current.getY(), current.getX() + 1);
             case WEST:
-                return new Position(current.getLongitude(), current.getLatitude() - 1);
+                return new Position(current.getY(), current.getX() - 1);
         }
 
         return current;
